@@ -1,0 +1,28 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+        maven {
+            name "Forge"
+            url "https://files.minecraftforge.net/maven/"
+        }
+        maven {
+            name = 'Sponge Snapshots'
+            url = 'https://repo.spongepowered.org/repository/maven-public/'
+        }
+    }
+}
+
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.5.0'
+}
+
+rootProject.name = "Crops 'N Cogs Suite"
+
+include "mods:CNCC_Library" // Main library for the whole suite. All mod(ule)s below will RELY on this mod.
+
+include "mods:Agriculture" // Agriculture mod(ule). For plants 'n shit.
+include "mods:Transport" // Transport mod(ule). Handles transportation of ALL the things!
+include "mods:Materials" // Materials mod(ule). For the otherwise extensive material system.
+include 'mods'
+
